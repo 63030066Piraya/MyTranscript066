@@ -12,9 +12,11 @@ namespace MyTranscript066
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        List<Course> year1Sem1;
+       public Form1()
         {
             InitializeComponent();
+            year1Sem1 = new List<Course>();
         }
         class Course
         {
@@ -36,6 +38,10 @@ namespace MyTranscript066
             newCourse.CourseName = textBox2.Text;
             newCourse.CourseCredit = textBox3.Text;
             newCourse.Grade = textBox4.Text;
+
+            dataGridViewCourse.DataSource = null;
+            year1Sem1.Add(newCourse);
+            dataGridViewCourse.DataSource = year1Sem1;
         }
     }
 }
